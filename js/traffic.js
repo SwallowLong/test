@@ -1,28 +1,30 @@
-var green = document.getElementsByClassName('green')[0],
-    orange = document.getElementsByClassName('orange')[0],
-    red = document.getElementsByClassName('red')[0];
-//写一个宏观任务 让他每6秒执行一次 在宏观任务中使用微观异步任务 让他们分别
-function traffic() {
-  setTimeout(() =>{
-    red.style.backgroundColor = '#000'
-    red.style.boxShadow = '-1px -1px 2px #fff'
-    orange.style.backgroundColor = 'orange'
-    orange.style.boxShadow = 'none'
-    setTimeout(() => {
-      orange.style.backgroundColor = '#000'
-      orange.style.boxShadow = '-1px -1px 2px #fff'
-      green.style.backgroundColor = 'green'
-      green.style.boxShadow = 'none'
-      setTimeout(() => {
-        green.style.backgroundColor = '#000'
-        green.style.boxShadow = '1px -1px 2px #fff'
-        red.style.backgroundColor = 'red'
-        red.style.boxShadow = 'none'
-        setTimeout(traffic(), 0)
-      }, 3000)
-    }, 1000)
-  }, 2000)
+//异步函数根据时间调用setTimeout
+function sleep(duration) { 
+  return new Promise(function(resolve, reject) { 
+    setTimeout(resolve,duration); 
+  })
 }
-traffic()
+
+//async中的await先执行即先调用setTimeout函数时间为2000 然后执行之后的document4句语句
+async function changeLight(existingColor, changeColor, duration) {
+  await sleep(duration)
+  document.getElementsByClassName(existingColor)[0].style.backgroundColor = '#000'
+  document.getElementsByClassName(existingColor)[0].style.boxShadow = '-1px -1px 2px #fff'
+  document.getElementsByClassName(changeColor)[0].style.backgroundColor = changeColor
+  document.getElementsByClassName(changeColor)[0].style.boxShadow = 'none'
+}
+
+//async后面返回的异步函数
+async function traffic() {
+  while(true) {
+    //使用多重await来调用 执行完第一个之后才回执行第二个
+    await changeLight('red', 'orange', 2000)
+    await changeLight('orange', 'green', 1000)
+    await changeLight('green', 'red', 3000)
+  }
+}
+
+traffic();
+
 
 
