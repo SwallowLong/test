@@ -45,3 +45,15 @@ span {
 p {
   margin-left: 1.5em;
 }
+
+.trueblock {
+  background-color: plum;
+}
+
+.inlbc {
+  background-color: rgb(241, 91, 91);
+}
+
+.parentbc {
+  background: seagreen;
+}
