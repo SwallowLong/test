@@ -1,0 +1,47 @@
+div {
+  margin: 8px;
+}
+
+.ik {
+  display: inline-block;
+  background-color: orange;
+}
+
+.inl {
+  display: inline;
+}
+
+.test1 {
+  background-color: rgb(241, 91, 91);
+}
+
+.test2 {
+  background-color: rgb(138, 243, 138);
+}
+
+.test3 {
+  margin: 0;
+  width: 100%;
+}
+
+.test5 {
+  background: pink;
+  display: block;
+}
+
+.test6 {
+  background-color: rgb(150, 172, 236);
+}
+
+.test7 {
+  background-color: rgb(227, 238, 133)
+}
+
+span {
+  margin: 8px;
+  background-color: paleturquoise;
+}
+
+p {
+  margin-left: 1.5em;
+}

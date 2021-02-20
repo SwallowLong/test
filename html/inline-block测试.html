@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/inline-block-test.css">
+  <title>两个div换成inline-block时 宽度的变化</title>
+</head>
+<body>
+  <div class="test1 ik">我是inline-block</div>
+  <div class="test2 inl">我是inline我是inline我是inline我是inline我是inline我是inline我是inline我是inline我是inline我是inline我是inline我是inline我是inline我是inline我是inline</div>
+  <div class="test3">
+    <div class="ik">我是inline-block1</div>
+    <div class="ik">我是inline-block2</div>
+    <div class="ik">我是inline-block3</div>
+    <div class="test4 ik">我是inline-block4我是inline-block4我是inline-block4我是inline-block4我是inline-block4我是inline-block4我是inline-block4我是inline-block4我是inline-block4我是inline-block4我是inline-block4</div>
+    <div class="test5">我是block 5</div>
+    <div class="test6 inl">我是inline 6 我是inline 我是inline 我是inline 我是inline 我是inline 我是inline 我是inline 我是inline 我是inline 我是inline 我是inline 我是inline 我是inline 我是inline 我是inline 我是inline 我是inline </div>
+  </div>
+  <div class="test7 inl">我是inline</div>
+  <div class="test8 ik">我是inline-block8我是inline-block4我是inline-block4我是inline-block4我是inline-block4我是inline-block4我是inline-block4我是inline-block4我是inline-block4我是inline-block4我是inline-block4</div>
+  <span>我是真的行内元素我是真的行内元素我是真的行内元素我是真的行内元素我是真的行内元素我是真的行内元素我是真的行内元素我是真的行内元素我是真的行内元素我是真的行内元素</span>
+  <article>
+    <h2>
+      display中的3个属性对width、margin的影响
+    </h2>
+      <section>
+        <h3>inline</h3>
+        <p>
+          1. 此中的元素为行内元素 无法为其设置宽度 随着父元素的宽度自行换行<br>
+          2. 行内元素的margin只有左右起作用 上下是不会起作用的<br>
+          3. 当inline元素的内容过多换行之后 第二行是不会有外边距的 这一特性和真正的行内元素完全一样<br>
+          <strong>
+            注意：由test1和test2可以看出 当inline-block和inline同一行时 inline若是换行了 inline-block的外边距会在inline的外边距的基础上叠加<br>
+          </strong>
+        </p>
+        <h3>inline-block</h3>
+        <p>
+          1. 此属性的元素为行内块级元素 何为行内块级元素 即可以为其设置宽度 当不为其设置宽度时 其宽度会随着内容的增加而增大 直到达到父元素的宽度为最大宽度 <br>
+          <strong>注意：当其同一行的元素的宽度之和超出了父元素的宽度后 由于为块级元素 所以整个元素块都会换行</strong>
+        </p>
+        <h3>block</h3>
+        <p>
+          1. 此属性为块级元素 其宽度固定为父元素的宽度 且独自占据一行
+        </p>
+      </section>
+  </article>
+</body>
+</html>
