@@ -24,7 +24,10 @@
   <div class="inl parentbc">
     <div class="inl inlbc">我本是块级元素 但设置为行内元素</div>
     <div class="trueblock">我就只是一个块级元素</div>
+    <div class="ik">我是设置了inline-block的块级元素</div>
     <span>我真的是行内元素</span>
+    <span class="bk">我是设置块级元素的行内元素</span>
+    <span class="ik ikbc">我是设置了inline-block的行内元素</span>
   </div>
   <article>
     <h2>
@@ -37,7 +40,7 @@
           2. 行内元素的margin只有左右起作用 上下是不会起作用的<br>
           3. 当inline元素的内容过多换行之后 第二行是不会有外边距的 这一特性和真正的行内元素完全一样<br>
           4. 设置了display为inline的块级元素能够包含另一个设置了inline的块级元素
-          5. 当设置了display为inline的块级元素中包含另一个块级元素时 此块级元素就不为其子元素 其他的元素 仍然算是其子元素（暂时在chrome上是如此）
+          5. 当设置了display为inline的块级元素中包含另一个块级元素时 此块级元素（包括使用display设置的block）就不为其子元素 其他的元素（包括使用display设置的inline-block的块级元素和行内元素）仍然算是其子元素（暂时在chrome上是如此）
           <strong>
             注意：由test1和test2可以看出 当inline-block和inline同一行时 inline若是换行了 inline-block的外边距会在inline的外边距的基础上叠加<br>
           </strong>
