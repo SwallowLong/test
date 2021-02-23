@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>使用js控制打印时只打印勾选项</title>
+  <link rel="stylesheet" href="../css/print-select.css">
+</head>
+<body>
+  <div id="ni1">
+    <input type="checkbox" name="nihao" onclick="printbox()" id="ni">
+    <label for="ni">ni</label>
+  </div>
+  <div id="hao1" media="screen">
+    <input type="checkbox"  name="nihao" onclick="printbox()" id="hao">
+    <label for="hao">hao</label>
+  </div>
+  <div id="hello1" media="screen">
+    <input type="checkbox"  name="nihao" onclick="printbox()" id="hello">
+    <label for="hao">hello</label>
+  </div>
+  <div id="world1" media="screen">
+    <input type="checkbox"  name="nihao" onclick="printbox()" id="world">
+    <label for="hao">world</label>
+  </div>
+  <script type="text/javascript">
+  let obj= {
+      ni: {},
+      hao: {},
+      hello: {},
+      world: {}
+  }
+
+  let obj1 = {
+    ni1: {},
+    hao1: {},
+    hello1: {},
+    world1: {},
+  }
+
+  let arr = [obj, obj1]
+  arr.forEach(item => {
+    for(let key in item) {
+      item[key] = document.getElementById(key)
+    }
+  })
+
+    function printbox() {
+      for(let key in obj) {
+        debugger
+        if(obj[key].checked) {
+          obj1[key + '1'].className = ''
+        } else {
+          obj1[key + '1'].className = 'hide'
+        }
+      }
+    }
+  </script>
+</body>
+</html>
