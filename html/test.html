@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>复选框模拟单选框</title>
+</head>
+<body>
+  <div>
+    <input type="checkbox" name="wo" onclick="nihao(hello1)" id="hello1">1
+    <input type="checkbox" name="wo" onclick="nihao(hello2)" id="hello2">2
+    <input type="checkbox" name="wo" onclick="nihao(hello3)" id="hello3">3
+    <input type="checkbox" name="wo" onclick="nihao(hello4)" id="hello4">4
+  </div>
+  <script>
+    let hello1 = document.getElementById('hello1')
+    let hello2 = document.getElementById('hello2')
+    let hello3 = document.getElementById('hello3')
+    let hello4 = document.getElementById('hello4')
+    let hello5 = document.getElementById('hello5')
+    function nihao(id) {
+      switch(id) {
+        case hello1:
+          hello2.checked = false
+          break;
+        case hello2:
+          hello1.checked = false
+          break;
+        case hello3:
+          hello4.checked = false
+          break;
+        case hello4:
+          hello3.checked = false
+          break;
+        default:
+          break;
+      }
+    }
+
+  </script>
+</body>
+</html>
